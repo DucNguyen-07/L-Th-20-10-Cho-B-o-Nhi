@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💌 Lá Thư 20/10 Cho Bảo Nhi 💖</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #ffd6e0, #f9b4cf, #f0a3ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+}
+
+
+h2.title {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ff1493;
+  text-shadow: 2px 2px 8px rgba(255, 20, 147, 0.5);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: floatTitle 3s ease-in-out infinite alternate;
+}
+@keyframes floatTitle {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-8px); }
+}
+
+
+.cloud {
+  position: absolute;
+  background: radial-gradient(white, rgba(255,255,255,0.6));
+  border-radius: 50%;
+  filter: blur(6px);
+  animation: floatCloud linear infinite;
+  z-index: 1;
+}
+@keyframes floatCloud {
+  0% { transform: translateX(-300px); opacity: 0.8; }
+  50% { transform: translateX(100vw); opacity: 1; }
+  100% { transform: translateX(120vw); opacity: 0.8; }
+}
+
+
+.envelope {
+  position: relative;
+  width: 700px;
+  height: 500px;
+  background: #ff8fb1;
+  border-radius: 22px;
+  box-shadow: 0 0 60px rgba(255, 105, 180, 0.6);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 5;
+  transition: all 0.5s ease;
+  animation: bounceIn 1.5s ease;
+}
+@keyframes bounceIn {
+  0% { transform: scale(0.2) rotate(-10deg); opacity: 0; }
+  60% { transform: scale(1.1) rotate(3deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); }
+}
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: #ff5f9e;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  transform-origin: top;
+  transition: transform 0.5s ease;
+  z-index: 6;
+}
+.letter {
+  position: absolute;
+  width: 92%;
+  height: 92%;
+  background: #fff;
+  top: 4%;
+  left: 4%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+  text-align: center;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.6s ease;
+  z-index: 5;
+  overflow-y: auto;
+}
+.envelope.open .flap { transform: rotateX(180deg); }
+.envelope.open .letter { transform: translateY(0); opacity: 1; }
+
+.letter h1 {
+  font-size: 30px;
+  color: #ff1493;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.letter p {
+  font-size: 16px;
+  color: #ff5f9e;
+  line-height: 1.8;
+  margin: 15px 0;
+}
+.letter p strong {
+  font-size: 18px;
+  color: #ff1493;
+}
+.btn-close {
+  background-color: #ff85b3;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-close:hover { background-color: #ff4d88; }
+
+
+.sunlight {
+  position: absolute;
+  top: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,200,0.4), transparent 70%);
+  border-radius: 50%;
+  animation: rotateSun 10s linear infinite;
+  z-index: 0;
+}
+@keyframes rotateSun {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+.heart {
+  position: absolute;
+  font-size: 20px;
+  color: #ff4da6;
+  opacity: 0.8;
+  animation: floatHeart 8s ease-in-out infinite;
+  z-index: 4;
+}
+@keyframes floatHeart {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { transform: translateY(-20px) scale(1.2); opacity: 0.8; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  background: radial-gradient(circle at 30% 30%, white, rgba(255,192,203,0.6));
+  animation: floatBubble 10s ease-in-out infinite;
+}
+@keyframes floatBubble {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-25px) scale(1.2); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sparkleAnim 2s ease-in-out infinite;
+}
+@keyframes sparkleAnim {
+  0%, 100% { transform: scale(0.5); opacity: 0.3; }
+  50% { transform: scale(1.5); opacity: 1; }
+}
+
+
+.cat {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url('https://cdn-icons-gif.flaticon.com/18205/18205094.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveCat 14s linear infinite;
+  z-index: 8;
+}
+@keyframes moveCat {
+  0% { left: 0; bottom: 0; transform: scaleX(1); }
+  50% { left: calc(100% - 100px); bottom: 40px; transform: scaleX(1); }
+  51% { transform: scaleX(-1); }
+  100% { left: 0; bottom: 0; transform: scaleX(-1); }
+}
+</style>
+</head>
+
+<body>
+<h2 class="title">💗 Happy Vietnamese Women's Day 20/10 💐</h2>
+<div class="sunlight"></div>
+<div class="cat"></div>
+
+<div class="envelope" id="envelope">
+  <div class="flap"></div>
+  <div class="letter">
+    <h1><i class="fa-solid fa-envelope-open-text"></i> Gửi bạn Bảo Nhi 💖</h1>
+    <p>Nhân ngày Phụ nữ Việt Nam 20/10,<br>
+    mình gửi đến <strong>Bảo Nhi</strong> lời chúc ngọt ngào nhất 💖<br>
+    Chúc bạn luôn xinh đẹp, rạng rỡ, hạnh phúc và tràn đầy tự tin . 🌸</p>
+    <p>Mỗi nụ cười của bạn là một tia nắng khiến mọi thứ trở nên dịu dàng hơn. 💫<br>
+    Mong bạn luôn cảm thấy bình yên và được bao quanh bởi những điều tốt đẹp nhất. 💕</p>
+    <p>💗 Kí tên: <strong>Nguyễn Đăng Đức</strong>💗</p>
+    <button class="btn-close" onclick="closeLetter(event)">Đóng</button>
+  </div>
+</div>
+
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/23/audio_d7b5bfa3a9.mp3?filename=cute-background-music-110334.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const envelope = document.getElementById('envelope');
+envelope.addEventListener('click', (e) => {
+  if (e.target.classList.contains('btn-close')) return;
+  envelope.classList.add('open');
+});
+function closeLetter(e) {
+  e.stopPropagation();
+  envelope.classList.remove('open');
+}
+
+
+for (let i = 0; i < 15; i++) {
+  const c = document.createElement('div');
+  c.classList.add('cloud');
+  const size = 100 + Math.random() * 200;
+  c.style.width = `${size}px`;
+  c.style.height = `${size * 0.6}px`;
+  c.style.top = `${Math.random() * 400}px`;
+  c.style.left = `${Math.random() * 100}vw`;
+  c.style.animationDuration = `${40 + Math.random() * 60}s`;
+  document.body.appendChild(c);
+}
+
+
+for (let i = 0; i < 60; i++) {
+  const h = document.createElement('div');
+  h.classList.add('heart');
+  h.innerHTML = '💖';
+  h.style.left = `${Math.random() * 100}vw`;
+  h.style.top = `${Math.random() * 100}vh`;
+  h.style.animationDuration = `${5 + Math.random() * 4}s`;
+  document.body.appendChild(h);
+}
+
+
+for (let i = 0; i < 80; i++) {
+  const b = document.createElement('div');
+  b.classList.add('bubble');
+  const size = 15 + Math.random() * 35;
+  b.style.width = `${size}px`;
+  b.style.height = `${size}px`;
+  b.style.left = `${Math.random() * 100}vw`;
+  b.style.top = `${Math.random() * 100}vh`;
+  b.style.animationDuration = `${6 + Math.random() * 6}s`;
+  document.body.appendChild(b);
+}
+
+
+for (let i = 0; i < 25; i++) {
+  const s = document.createElement('div');
+  s.classList.add('sparkle');
+  s.style.left = `${Math.random() * 100}vw`;
+  s.style.top = `${Math.random() * 100}vh`;
+  s.style.animationDuration = `${1.5 + Math.random()}s`;
+  document.body.appendChild(s);
+}
+</script>
+</body>
+</html>
